@@ -1,10 +1,6 @@
-//
-//    FILE: GY521_angle.ino
-//  AUTHOR: Rob Tillaart
-// PURPOSE: read angleX, angleY, angleZ
-//    DATE: 2022-06-06
 
-//Libraries used
+
+//Libraries utiliser
 
 #include "GY521.h"
 #include "BluetoothSerial.h"
@@ -88,9 +84,3 @@ Serial.print(gauche);
   //
 }
 
-
-
-
-
-
-//  -- END OF FILE --
