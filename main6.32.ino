@@ -8,12 +8,7 @@
 GY521 sensor(0x68);
 
 uint32_t counter = 0;
-// select either EEPROM or SPI FLASH storage:
-// #ifdef ADAFRUIT_SENSOR_CALIBRATION_USE_EEPROM
-// Adafruit_Sensor_Calibration_EEPROM cal;
-// #else
-// Adafruit_Sensor_Calibration_SDFat cal;
-// #endif
+
 /*
 pin scl->c->22
 pin sda->z->21
@@ -57,25 +52,12 @@ void loop() {
   nunchuck.readData();  // Read inputs and update maps
   Serial.println(x);
   Serial.println(z);
-  // Serial.print("X: ");
-  // Serial.print(nunchuck.getAccelX());
-  // Serial.print(" \tY: "); Serial.print(nunchuck.getAccelY());
-  // Serial.print(" \tZ: "); Serial.println(nunchuck.getAccelZ());
-
-  // Serial.print("Joy: (");
-  // Serial.print(nunchuck.getJoyX());
-
-  // Serial.print(nunchuck.getJoyY());
-
 
   Serial.print("Button: ");
   if (nunchuck.getButtonZ()) Serial.print(" Z ");
   if (nunchuck.getButtonC()) Serial.print(" C ");
 
   Serial.println();
-
-
-
 
   //touche du clavier en fonction des condition
   if (nunchuck.getJoyY() < 70) {
